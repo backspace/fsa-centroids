@@ -1,0 +1,9 @@
+{
+  "name": "fsa-centroids",
+  "version": "1.0.0",
+  "description": "A script to generate a mapping of FSAs to their centroids",
+  "main": "index.js",
+  "repository": "https://github.com/backspace/fsa-centroids",
+  "author": "Buck Doyle <b@chromatin.ca>",
+  "license": "MIT"
+}
