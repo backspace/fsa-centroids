@@ -14,3 +14,14 @@ const centroids = fsas.features.map(fsa => {
 });
 
 fs.writeFileSync('data/fsa-centroids.geojson', JSON.stringify(centroids, null, 2));
+
+const fsaToCentroid = centroids.reduce((fsaToCentroid, centroid) => {
+  const fsa = centroid.properties.CFSAUID;
+  const point = centroid.geometry.coordinates;
+
+  fsaToCentroid[fsa] = point;
+
+  return fsaToCentroid;
+}, {});
+
+fs.writeFileSync('data/fsa-centroids.json', JSON.stringify(fsaToCentroid, null, 2));
