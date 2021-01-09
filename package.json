@@ -5,5 +5,10 @@
   "main": "index.js",
   "repository": "https://github.com/backspace/fsa-centroids",
   "author": "Buck Doyle <b@chromatin.ca>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@turf/centroid": "^6.0.2",
+    "@turf/helpers": "^6.1.4"
+  },
+  "type": "module"
 }
