@@ -7,6 +7,11 @@ const featureCollection = helpers.featureCollection;
 
 const fsas = JSON.parse(fs.readFileSync('FSA_Data/Canadian_FSA.geojson'));
 
+// Hack out everything but the first shape from an FSA; R3C has two mysterious extraneous shapes?
+fsas.features.forEach(fsa => {
+  fsa.geometry.coordinates = [fsa.geometry.coordinates[0]];
+});
+
 const centroids = fsas.features.map(fsa => {
   const c = centroid(fsa);
   c.properties = fsa.properties;
